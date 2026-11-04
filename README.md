@@ -93,16 +93,26 @@ python3 /path/to/image-sorter/main.py --include-video --dry-run
 
 The project includes a separate script called `data_dump.py`.
 
-This script prints metadata information from supported image files. It can be useful for troubleshooting images that are skipped during sorting or for investigating which metadata fields are available.
+This script extracts and displays metadata information from supported image files. It can be useful for troubleshooting images that are skipped during sorting or investigating which metadata fields are available.
 
-The output is printed directly in the terminal.
+By default, the output is printed directly in the terminal.
 
 ### Optional flag
 
+### `--log-file`
+
 The data dump script also supports an optional flag to save the output to a file instead of printing it in the terminal.
 
+The flag accepts a file path, allowing you to specify both the filename and its destination.
+
+Example:
+
 ```bash
-python3 /path/to/image-sorter/data_dump.py --log-file
+python3 /path/to/image-sorter/data_dump.py --log-file /path/to/output/metadata-log.txt
 ```
 
-Check the script's available arguments if you need additional information about its options.
+If you want to save the log in the current directory, you can simply use:
+
+```bash
+python3 /path/to/image-sorter/data_dump.py --log-file metadata-log.txt
+```
